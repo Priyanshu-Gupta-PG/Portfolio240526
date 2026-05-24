@@ -46,6 +46,7 @@ export function CommandPalette() {
       { label: "Contact", hint: "Email & socials", kind: "section", action: scrollTo("contact") },
       ...venturePages,
       { label: "LinkedIn", hint: "@priyanshu--gupta", kind: "external", action: openLink(links.linkedin) },
+      { label: "X / Twitter", hint: "@i_priyanshug", kind: "external", action: openLink(links.x) },
       { label: "Instagram", hint: "@priyanshuvkgupta", kind: "external", action: openLink(links.instagram) },
       { label: "YouTube · Campus CEOs", hint: "17yo who funded his own education", kind: "external", action: openLink(links.youtube) },
       { label: "Email", hint: profile.email, kind: "action", action: openLink(`mailto:${profile.email}`) },

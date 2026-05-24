@@ -26,6 +26,7 @@ export const profile = {
 export const links = {
   linkedin: "https://linkedin.com/in/priyanshu--gupta",
   instagram: "https://instagram.com/priyanshuvkgupta",
+  x: "https://x.com/i_priyanshug",
   youtube: "https://youtu.be/HwwCLEwwuic",
   email: "mailto:priyanshuguptaunique@gmail.com",
   builderFellows: "https://builderfellows.com",

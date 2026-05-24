@@ -63,9 +63,8 @@ export function Contact() {
 
           <div className="md:col-span-6 lg:col-span-5 lg:col-start-8 grid grid-cols-2 gap-x-6 gap-y-8 self-start">
             <ContactLink label="LINKEDIN" handle="priyanshu--gupta" href={links.linkedin} />
+            <ContactLink label="X / TWITTER" handle="@i_priyanshug" href={links.x} />
             <ContactLink label="INSTAGRAM" handle="priyanshuvkgupta" href={links.instagram} />
-            <ContactLink label="YOUTUBE" handle="Campus CEOs · Ep 4" href={links.youtube} />
-            <ContactLink label="CALL" handle={profile.phone} href={`tel:${profile.phone.replace(/\s+/g, "")}`} />
           </div>
         </motion.div>
 
