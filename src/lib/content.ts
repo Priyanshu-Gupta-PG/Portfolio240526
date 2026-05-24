@@ -272,6 +272,17 @@ export type GalleryPhoto = {
 // to a styled typographic placeholder so the section ships intact.
 export const gallery: GalleryPhoto[] = [
   {
+    id: "agentathon-lyzr",
+    src: "/gallery/agentathon-lyzr.jpg",
+    alt: "Priyanshu Gupta accepting the third-place cheque at Agentathon by Lyzr.",
+    caption: "Third place at Lyzr's Agentathon — ₹40K prize at India's AI-agent hackathon.",
+    event: "Agentathon · Lyzr",
+    location: "Polaris School of Technology, Bengaluru",
+    date: "Apr 2026",
+    tag: "hackathon",
+    aspect: "landscape",
+  },
+  {
     id: "perplexity-bayarea",
     src: "/gallery/perplexity-bayarea.jpg",
     alt: "Workshop session at the Perplexity Business Fellowship.",
