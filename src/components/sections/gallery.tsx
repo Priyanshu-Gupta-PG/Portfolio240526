@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { X, ArrowLeft, ArrowRight, Camera } from "lucide-react";
 import { gallery, type GalleryPhoto } from "@/lib/content";
 import { SectionHeader } from "./ventures";
@@ -18,76 +18,76 @@ const tagLabel: Record<GalleryPhoto["tag"], string> = {
 };
 
 const aspectClass: Record<GalleryPhoto["aspect"], string> = {
-  portrait: "aspect-[3/4] w-[260px] sm:w-[300px]",
-  landscape: "aspect-[16/10] w-[440px] sm:w-[520px]",
-  square: "aspect-square w-[320px] sm:w-[360px]",
+  portrait: "aspect-[3/4]",
+  landscape: "aspect-[16/10]",
+  square: "aspect-square",
 };
 
-export function Gallery() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+// Distribute items across 3 columns by index modulo 3.
+function splitColumns(photos: GalleryPhoto[]): [GalleryPhoto[], GalleryPhoto[], GalleryPhoto[]] {
+  const a: GalleryPhoto[] = [];
+  const b: GalleryPhoto[] = [];
+  const c: GalleryPhoto[] = [];
+  photos.forEach((p, i) => {
+    if (i % 3 === 0) a.push(p);
+    else if (i % 3 === 1) b.push(p);
+    else c.push(p);
+  });
+  return [a, b, c];
+}
 
-  const scrollBy = (delta: number) => {
-    trackRef.current?.scrollBy({ left: delta, behavior: "smooth" });
-  };
+export function Gallery() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [col1, col2, col3] = useMemo(() => splitColumns(gallery), []);
 
   return (
     <section
       id="gallery"
-      className="relative w-full py-32 sm:py-48 border-t border-[var(--color-border)]"
+      className="relative w-full py-32 sm:py-48 border-t border-[var(--color-border)] overflow-hidden"
     >
       <div className="mx-auto max-w-[1500px] px-6 sm:px-10">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8">
-          <SectionHeader
-            number="06"
-            label="OUT IN THE WILD"
-            headline="Receipts from the road."
-          />
-          <div className="hidden sm:flex items-center gap-2">
-            <button
-              onClick={() => scrollBy(-560)}
-              aria-label="Scroll left"
-              className="h-11 w-11 grid place-items-center rounded-full border border-[var(--color-border-strong)] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:border-[var(--color-fg-dim)] transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4" strokeWidth={1.5} />
-            </button>
-            <button
-              onClick={() => scrollBy(560)}
-              aria-label="Scroll right"
-              className="h-11 w-11 grid place-items-center rounded-full border border-[var(--color-border-strong)] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:border-[var(--color-fg-dim)] transition-colors"
-            >
-              <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
-            </button>
-          </div>
-        </div>
+        <SectionHeader
+          number="06"
+          label="OUT IN THE WILD"
+          headline="Receipts from the road."
+        />
         <p className="mt-6 max-w-xl text-[var(--color-fg-muted)] text-base leading-relaxed">
           Fellowships, pitch nights, hackathons, team rooms.
-          Drag to scroll.
+          Tap any frame to open.
         </p>
       </div>
 
-      <div
-        ref={trackRef}
-        className="mt-12 sm:mt-16 flex gap-5 sm:gap-6 overflow-x-auto overflow-y-hidden scroll-smooth px-6 sm:px-10 pb-6 snap-x snap-mandatory cursor-grab active:cursor-grabbing"
-        style={{ scrollbarColor: "var(--color-border-strong) transparent" }}
-      >
-        <div aria-hidden className="shrink-0 w-0 sm:w-[calc((100vw-1500px)/2)] max-w-0 sm:max-w-none" />
-        {gallery.map((photo, i) => (
-          <GalleryCard
-            key={photo.id}
-            photo={photo}
-            index={i}
-            onOpen={() => setOpenIndex(i)}
+      <div className="mt-12 sm:mt-16 mx-auto max-w-[1500px] px-6 sm:px-10">
+        <div className="grid grid-cols-3 gap-3 sm:gap-5 h-[640px] sm:h-[820px]">
+          <ScrollColumn
+            photos={col1}
+            direction="up"
+            duration={42}
+            onOpen={(p) => setOpenIndex(gallery.findIndex((g) => g.id === p.id))}
           />
-        ))}
-        <div aria-hidden className="shrink-0 w-6 sm:w-10" />
+          <ScrollColumn
+            photos={col2}
+            direction="down"
+            duration={52}
+            onOpen={(p) => setOpenIndex(gallery.findIndex((g) => g.id === p.id))}
+            offset
+          />
+          <ScrollColumn
+            photos={col3}
+            direction="up"
+            duration={36}
+            onOpen={(p) => setOpenIndex(gallery.findIndex((g) => g.id === p.id))}
+          />
+        </div>
       </div>
 
       <Lightbox
         openIndex={openIndex}
         onClose={() => setOpenIndex(null)}
         onPrev={() =>
-          setOpenIndex((v) => (v === null ? null : (v - 1 + gallery.length) % gallery.length))
+          setOpenIndex((v) =>
+            v === null ? null : (v - 1 + gallery.length) % gallery.length
+          )
         }
         onNext={() =>
           setOpenIndex((v) => (v === null ? null : (v + 1) % gallery.length))
@@ -97,42 +97,93 @@ export function Gallery() {
   );
 }
 
-function GalleryCard({
-  photo,
-  index,
+function ScrollColumn({
+  photos,
+  direction,
+  duration,
   onOpen,
+  offset = false,
+}: {
+  photos: GalleryPhoto[];
+  direction: "up" | "down";
+  duration: number;
+  onOpen: (photo: GalleryPhoto) => void;
+  offset?: boolean;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { amount: 0.05 });
+  // Render the set twice. Animating between 0% and -50% lands on identical
+  // content, so the loop point is invisible.
+  const items = [...photos, ...photos];
+  const target = direction === "up" ? ["0%", "-50%"] : ["-50%", "0%"];
+
+  return (
+    <div
+      ref={ref}
+      className="relative overflow-hidden"
+      // Negative top margin on the middle column offsets it so the three
+      // columns don't line up in a grid.
+      style={offset ? { transform: "translateY(-6%)" } : undefined}
+    >
+      <motion.div
+        className="flex flex-col gap-3 sm:gap-5 will-change-transform"
+        animate={inView ? { y: target } : undefined}
+        transition={{
+          duration,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop",
+        }}
+      >
+        {items.map((photo, i) => (
+          <ColumnCard
+            key={`${photo.id}-${i}`}
+            photo={photo}
+            onClick={() => onOpen(photo)}
+          />
+        ))}
+      </motion.div>
+
+      {/* edge fades so the loop seams stay invisible */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[var(--color-bg)] to-transparent z-10"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[var(--color-bg)] to-transparent z-10"
+      />
+    </div>
+  );
+}
+
+function ColumnCard({
+  photo,
+  onClick,
 }: {
   photo: GalleryPhoto;
-  index: number;
-  onOpen: () => void;
+  onClick: () => void;
 }) {
-  const ref = useRef<HTMLButtonElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.2 });
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
 
   return (
-    <motion.button
-      ref={ref}
-      onClick={onOpen}
-      initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: (index % 4) * 0.06 }}
+    <button
+      onClick={onClick}
       className={cn(
-        "group relative shrink-0 snap-start text-left rounded-xl overflow-hidden border border-[var(--color-border-strong)] bg-[var(--color-bg-soft)]",
+        "relative w-full block rounded-lg overflow-hidden border border-[var(--color-border-strong)] bg-[var(--color-bg-soft)] group/card cursor-pointer",
         aspectClass[photo.aspect]
       )}
     >
-      {/* image / fallback */}
       <div className="absolute inset-0">
         {!failed && (
           <Image
             src={photo.src}
             alt={photo.alt}
             fill
-            sizes="(min-width: 640px) 520px, 80vw"
+            sizes="(min-width: 1024px) 460px, (min-width: 640px) 30vw, 33vw"
             className={cn(
-              "object-cover transition-all duration-700 ease-out group-hover:scale-[1.04]",
+              "object-cover transition-all duration-700 ease-out group-hover/card:scale-[1.05]",
               loaded ? "opacity-100" : "opacity-0"
             )}
             onLoad={() => setLoaded(true)}
@@ -143,47 +194,28 @@ function GalleryCard({
         {(failed || !loaded) && (
           <Placeholder photo={photo} loaded={loaded} failed={failed} />
         )}
-        {/* gradient overlay */}
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)]/85 via-[var(--color-bg)]/20 to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)]/85 via-[var(--color-bg)]/15 to-transparent opacity-90 group-hover/card:opacity-60 transition-opacity duration-500"
         />
       </div>
 
-      {/* meta */}
-      <div className="relative h-full flex flex-col justify-between p-5 sm:p-6">
-        <div className="flex items-start justify-between gap-3">
-          <span className="text-mono-xs text-[var(--color-accent)]">
-            {tagLabel[photo.tag]}
-          </span>
-          <span className="text-mono-xs text-[var(--color-fg-muted)] tabular-nums">
-            {photo.date}
-          </span>
+      <div className="relative h-full flex flex-col justify-end p-3 sm:p-4">
+        <div className="flex items-center justify-between text-mono-xs">
+          <span className="text-[var(--color-accent)]">{tagLabel[photo.tag]}</span>
+          <span className="text-[var(--color-fg-muted)] tabular-nums">{photo.date}</span>
         </div>
-        <div>
-          <h3 className="text-display-italic text-[clamp(1.25rem,1.8vw,1.5rem)] text-[var(--color-fg)] leading-tight">
-            {photo.event}
-          </h3>
-          <p className="mt-1.5 text-sm text-[var(--color-fg-muted)] line-clamp-2">
-            {photo.caption}
-          </p>
-          {photo.location && (
-            <p className="mt-2 text-mono-xs text-[var(--color-fg-dim)]">
-              ↳ {photo.location.toUpperCase()}
-            </p>
-          )}
-        </div>
+        <h3 className="mt-1.5 text-display-italic text-[clamp(0.95rem,1.2vw,1.1rem)] text-[var(--color-fg)] leading-tight">
+          {photo.event}
+        </h3>
       </div>
 
-      {/* hover accent */}
-      <motion.span
+      <span
         aria-hidden
-        className="absolute inset-x-0 bottom-0 h-px bg-[var(--color-accent)] origin-left"
-        initial={{ scaleX: 0 }}
-        whileHover={{ scaleX: 1 }}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute inset-x-0 bottom-0 h-px bg-[var(--color-accent)] origin-left scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500"
+        style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
       />
-    </motion.button>
+    </button>
   );
 }
 
@@ -208,10 +240,10 @@ function Placeholder({
         backgroundBlendMode: "soft-light",
       }}
     >
-      <div className="flex flex-col items-center gap-3 opacity-25">
-        <Camera className="h-8 w-8 text-[var(--color-fg)]" strokeWidth={1.2} />
-        <span className="text-mono-xs text-[var(--color-fg)]">
-          {failed ? "PLACEHOLDER" : loaded ? "" : "LOADING"}
+      <div className="flex flex-col items-center gap-2 opacity-30">
+        <Camera className="h-5 w-5 sm:h-6 sm:w-6 text-[var(--color-fg)]" strokeWidth={1.2} />
+        <span className="text-[10px] tracking-[0.18em] text-[var(--color-fg)]">
+          {failed ? "PLACEHOLDER" : loaded ? "" : "—"}
         </span>
       </div>
       <div className="sr-only">{photo.alt}</div>
