@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 
 const items = [
-  "Two acquisitions",
+  "Ex-Joper",
+  "Ex-ISP Association",
   "Y Combinator · SUS India",
   "Perplexity Business Fellow",
   "MIT LaunchX Alumnus",
