@@ -132,10 +132,17 @@
   );
 }
 
-/* word reveal mask */
+/* word/line reveal mask — overflow:clip with margin so descenders (g, y, p, q, j)
+   don't get cut off when paired with tight display line-heights */
+.reveal-clip {
+  overflow: clip;
+  overflow-clip-margin: 0.4em;
+}
+
 .reveal-mask {
   display: inline-block;
-  overflow: hidden;
+  overflow: clip;
+  overflow-clip-margin: 0.4em;
   vertical-align: bottom;
   line-height: 0.95;
 }

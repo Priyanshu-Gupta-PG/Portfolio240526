@@ -31,7 +31,7 @@ export function WordReveal({
       {words.map((word, i) => (
         <span
           key={`${word}-${i}`}
-          className="inline-block overflow-hidden align-bottom"
+          className="inline-block reveal-clip align-bottom"
           style={{ marginRight: i === words.length - 1 ? 0 : "0.25em" }}
         >
           <motion.span
@@ -63,7 +63,7 @@ export function LineReveal({ children, className, delay = 0, once = true }: Line
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once, amount: 0.3 });
   return (
-    <div ref={ref} className={cn("overflow-hidden", className)}>
+    <div ref={ref} className={cn("reveal-clip", className)}>
       <motion.div
         initial={{ y: "110%" }}
         animate={inView ? { y: "0%" } : { y: "110%" }}
