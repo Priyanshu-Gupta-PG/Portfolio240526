@@ -4,6 +4,7 @@ import "./globals.css";
 import { LenisProvider } from "@/components/lenis-provider";
 import { CommandPalette } from "@/components/command-palette";
 import { Nav } from "@/components/nav";
+import { StructuredData } from "@/components/structured-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,11 +31,11 @@ const SITE_URL = "https://priyanshugupta.in";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Priyanshu Gupta — Founder, Operator",
+    default: "Priyanshu Gupta — Founder, Operator. Two acquisitions before college.",
     template: "%s · Priyanshu Gupta",
   },
   description:
-    "Two acquisitions before college. Founder of BuilderFellows. Y Combinator, Perplexity, MIT LaunchX, McKinsey Forward. Building out of Bengaluru.",
+    "Priyanshu Gupta — teenage serial founder from Bengaluru. Two acquisitions (Joper · ISP Association) before college. Founder of BuilderFellows. Y Combinator, Perplexity Business Fellow, MIT LaunchX, McKinsey Forward.",
   keywords: [
     "Priyanshu Gupta",
     "BuilderFellows",
@@ -42,27 +43,43 @@ export const metadata: Metadata = {
     "ISP Association",
     "founder",
     "Bengaluru",
-    "Y Combinator",
-    "Perplexity",
-    "MIT LaunchX",
     "Indian founders",
+    "Y Combinator",
+    "YC Startup School India",
+    "Perplexity Business Fellow",
+    "MIT LaunchX",
+    "McKinsey Forward",
+    "Polaris School of Technology",
+    "teenage entrepreneur",
+    "Campus CEOs",
   ],
-  authors: [{ name: "Priyanshu Gupta" }],
+  authors: [{ name: "Priyanshu Gupta", url: SITE_URL }],
   creator: "Priyanshu Gupta",
+  publisher: "Priyanshu Gupta",
+  category: "portfolio",
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
-    type: "website",
+    type: "profile",
     url: SITE_URL,
     title: "Priyanshu Gupta — Founder, Operator",
     description:
       "Two acquisitions before college. Founder of BuilderFellows. Building out of Bengaluru.",
     siteName: "Priyanshu Gupta",
-    locale: "en_US",
+    locale: "en_IN",
+    firstName: "Priyanshu",
+    lastName: "Gupta",
+    username: "i_priyanshug",
+    gender: "male",
   },
   twitter: {
     card: "summary_large_image",
     title: "Priyanshu Gupta — Founder, Operator",
     description:
       "Two acquisitions before college. Founder of BuilderFellows. Building out of Bengaluru.",
+    creator: "@i_priyanshug",
+    site: "@i_priyanshug",
   },
   robots: {
     index: true,
@@ -72,7 +89,17 @@ export const metadata: Metadata = {
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
+      "max-video-preview": -1,
     },
+  },
+  verification: {
+    // Add when you set up Google Search Console:
+    // google: "<verification-code>",
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
 };
 
@@ -94,6 +121,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="grain antialiased" suppressHydrationWarning>
+        <StructuredData />
         <LenisProvider>
           <Nav />
           <CommandPalette />

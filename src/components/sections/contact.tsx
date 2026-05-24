@@ -15,7 +15,7 @@ export function Contact() {
     <section
       id="contact"
       ref={ref}
-      className="relative w-full px-6 sm:px-10 pt-32 sm:pt-48 pb-12 border-t border-[var(--color-border)]"
+      className="relative w-full px-4 sm:px-10 pt-24 sm:pt-48 pb-10 sm:pb-12 border-t border-[var(--color-border)]"
     >
       <div className="mx-auto max-w-[1500px]">
         <div className="flex items-baseline gap-3">
@@ -24,7 +24,7 @@ export function Contact() {
         </div>
 
         <div className="mt-10">
-          <h2 className="text-display text-[clamp(3rem,10vw,9rem)] text-[var(--color-fg)] leading-[0.95]">
+          <h2 className="text-display text-[clamp(2.25rem,10vw,9rem)] text-[var(--color-fg)] leading-[0.95]">
             <WordReveal delay={0.1}>Let&apos;s build</WordReveal>
             <br />
             <span className="text-display-italic text-[var(--color-fg-muted)]">

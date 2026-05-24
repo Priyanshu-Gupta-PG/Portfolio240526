@@ -18,7 +18,7 @@ export function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative min-h-[100svh] w-full flex flex-col justify-end pb-24 sm:pb-32 px-6 sm:px-10 overflow-hidden"
+      className="relative min-h-[100svh] w-full flex flex-col justify-end pb-16 sm:pb-32 px-4 sm:px-10 overflow-hidden"
     >
       {/* ambient gradient */}
       <div
@@ -33,7 +33,7 @@ export function Hero() {
       {/* kicker */}
       <motion.div
         style={{ y, opacity }}
-        className="mx-auto w-full max-w-[1500px] flex flex-col gap-10 sm:gap-14"
+        className="mx-auto w-full max-w-[1500px] flex flex-col gap-7 sm:gap-14"
       >
         <FadeIn delay={0.1} className="flex items-center gap-3">
           <span className="h-px w-8 bg-[var(--color-accent)]" />
@@ -43,16 +43,16 @@ export function Hero() {
         </FadeIn>
 
         {/* nameplate */}
-        <div className="-mt-2 sm:-mt-4">
+        <div className="-mt-1 sm:-mt-4">
           <LineReveal delay={0.2}>
-            <p className="text-display-italic text-[clamp(2rem,4.4vw,3.75rem)] text-[var(--color-fg)] leading-[1.02]">
+            <p className="text-display-italic text-[clamp(1.4rem,4.4vw,3.75rem)] text-[var(--color-fg)] leading-[1.02]">
               Priyanshu Gupta<span className="text-[var(--color-accent)]">.</span>
             </p>
           </LineReveal>
         </div>
 
         {/* headline */}
-        <h1 className="text-display text-[clamp(3.5rem,11vw,11.5rem)] text-[var(--color-fg)] max-w-[18ch]">
+        <h1 className="text-display text-[clamp(2.5rem,11vw,11.5rem)] text-[var(--color-fg)] max-w-[18ch]">
           <LineReveal delay={0.45}>
             <span>{profile.story.headline[0]}</span>
           </LineReveal>

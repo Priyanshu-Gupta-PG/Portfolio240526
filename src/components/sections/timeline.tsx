@@ -17,7 +17,7 @@ export function Timeline() {
   return (
     <section
       id="journey"
-      className="relative w-full px-6 sm:px-10 py-32 sm:py-48 border-t border-[var(--color-border)]"
+      className="relative w-full px-4 sm:px-10 py-24 sm:py-48 border-t border-[var(--color-border)]"
     >
       <div className="mx-auto max-w-[1500px]">
         <SectionHeader

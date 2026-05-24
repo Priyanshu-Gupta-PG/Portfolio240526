@@ -15,7 +15,7 @@ export function Manifesto() {
     <section
       ref={ref}
       id="manifesto"
-      className="relative w-full px-6 sm:px-10 py-32 sm:py-48 overflow-hidden"
+      className="relative w-full px-4 sm:px-10 py-24 sm:py-48 overflow-hidden"
     >
       <div className="mx-auto max-w-[1500px]">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-x-10">

@@ -41,9 +41,9 @@ export function Gallery() {
   return (
     <section
       id="gallery"
-      className="relative w-full py-32 sm:py-48 border-t border-[var(--color-border)] overflow-hidden"
+      className="relative w-full py-24 sm:py-48 border-t border-[var(--color-border)] overflow-hidden"
     >
-      <div className="mx-auto max-w-[1500px] px-6 sm:px-10">
+      <div className="mx-auto max-w-[1500px] px-4 sm:px-10">
         <SectionHeader
           number="06"
           label="OUT IN THE WILD"
@@ -54,8 +54,8 @@ export function Gallery() {
         </p>
       </div>
 
-      <div className="mt-12 sm:mt-16 mx-auto max-w-[1500px] px-6 sm:px-10">
-        <div className="grid grid-cols-3 gap-3 sm:gap-5 h-[640px] sm:h-[820px]">
+      <div className="mt-10 sm:mt-16 mx-auto max-w-[1500px] px-4 sm:px-10">
+        <div className="grid grid-cols-3 gap-2 sm:gap-5 h-[480px] sm:h-[820px]">
           <ScrollColumn photos={col1} direction="up" duration={14} />
           <ScrollColumn photos={col2} direction="down" duration={17} offset />
           <ScrollColumn photos={col3} direction="up" duration={11} />
@@ -88,7 +88,7 @@ function ScrollColumn({
       style={offset ? { transform: "translateY(-6%)" } : undefined}
     >
       <motion.div
-        className="flex flex-col gap-3 sm:gap-5 will-change-transform"
+        className="flex flex-col gap-2 sm:gap-5 will-change-transform"
         animate={inView ? { y: target } : undefined}
         transition={{
           duration,
@@ -150,12 +150,16 @@ function ColumnCard({ photo }: { photo: GalleryPhoto }) {
         />
       </div>
 
-      <div className="relative h-full flex flex-col justify-end p-3 sm:p-4">
-        <div className="flex items-center justify-between text-mono-xs">
+      <div className="relative h-full flex flex-col justify-end p-2 sm:p-4">
+        <div className="hidden sm:flex items-center justify-between text-mono-xs">
           <span className="text-[var(--color-accent)]">{tagLabel[photo.tag]}</span>
           <span className="text-[var(--color-fg-muted)] tabular-nums">{photo.date}</span>
         </div>
-        <h3 className="mt-1.5 text-display-italic text-[clamp(0.95rem,1.2vw,1.1rem)] text-[var(--color-fg)] leading-tight">
+        {/* mobile: just the tag, no date label */}
+        <span className="sm:hidden text-[8px] tracking-[0.16em] uppercase text-[var(--color-accent)] font-mono">
+          {tagLabel[photo.tag]}
+        </span>
+        <h3 className="mt-1 sm:mt-1.5 text-display-italic text-[clamp(0.75rem,1.2vw,1.1rem)] text-[var(--color-fg)] leading-tight line-clamp-2">
           {photo.event}
         </h3>
       </div>

@@ -10,7 +10,7 @@ export function Credentials() {
   return (
     <section
       id="credentials"
-      className="relative w-full px-6 sm:px-10 py-32 sm:py-48 border-t border-[var(--color-border)]"
+      className="relative w-full px-4 sm:px-10 py-24 sm:py-48 border-t border-[var(--color-border)]"
     >
       <div className="mx-auto max-w-[1500px]">
         <SectionHeader
@@ -65,7 +65,7 @@ function CredentialCard({
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.05 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative bg-[var(--color-bg)] p-8 sm:p-10 min-h-[260px] flex flex-col justify-between overflow-hidden group cursor-default"
+      className="relative bg-[var(--color-bg)] p-6 sm:p-10 min-h-[220px] sm:min-h-[260px] flex flex-col justify-between overflow-hidden group cursor-default"
     >
       {/* hover bg */}
       <motion.div
