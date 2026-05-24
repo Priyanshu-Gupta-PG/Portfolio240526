@@ -21,7 +21,7 @@ export function Timeline() {
     >
       <div className="mx-auto max-w-[1500px]">
         <SectionHeader
-          number="03"
+          number="04"
           label="JOURNEY"
           headline="From age fourteen to now."
         />

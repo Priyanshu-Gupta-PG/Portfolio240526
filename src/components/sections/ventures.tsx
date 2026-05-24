@@ -10,7 +10,7 @@ export function Ventures() {
   return (
     <section id="ventures" className="relative w-full px-6 sm:px-10 py-32 sm:py-48 border-t border-[var(--color-border)]">
       <div className="mx-auto max-w-[1500px]">
-        <SectionHeader number="02" label="WORK" headline="Companies I've built, sold, and am still building." />
+        <SectionHeader number="03" label="WORK" headline="Companies I've built, sold, and am still building." />
         <ul className="mt-16 sm:mt-24">
           {ventures.map((v, i) => (
             <VentureRow key={v.name} venture={v} index={i} />

@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/hero";
+import { Story } from "@/components/sections/story";
 import { Manifesto } from "@/components/sections/manifesto";
 import { Marquee } from "@/components/sections/marquee";
 import { Ventures } from "@/components/sections/ventures";
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="relative">
       <Hero />
       <Marquee />
+      <Story />
       <Manifesto />
       <Ventures />
       <Timeline />

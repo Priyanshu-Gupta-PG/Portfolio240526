@@ -65,6 +65,9 @@ export function Nav() {
         </a>
 
         <nav className="hidden md:flex items-center gap-8 text-mono-xs">
+          <a className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors" href="#story">
+            Story
+          </a>
           <a className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors" href="#ventures">
             Work
           </a>

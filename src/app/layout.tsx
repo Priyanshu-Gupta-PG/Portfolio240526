@@ -93,7 +93,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
       suppressHydrationWarning
     >
-      <body className="grain antialiased">
+      <body className="grain antialiased" suppressHydrationWarning>
         <LenisProvider>
           <Nav />
           <CommandPalette />

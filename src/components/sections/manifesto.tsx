@@ -27,7 +27,7 @@ export function Manifesto() {
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-baseline gap-3 sticky top-32"
             >
-              <span className="text-mono-xs text-[var(--color-accent)]">01</span>
+              <span className="text-mono-xs text-[var(--color-accent)]">02</span>
               <span className="text-mono-xs text-[var(--color-fg-muted)]">
                 FOUNDER&apos;S NOTE
               </span>

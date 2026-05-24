@@ -14,7 +14,7 @@ export function Credentials() {
     >
       <div className="mx-auto max-w-[1500px]">
         <SectionHeader
-          number="04"
+          number="05"
           label="ROOMS"
           headline="The rooms I've been in."
         />
