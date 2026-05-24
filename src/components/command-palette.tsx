@@ -38,7 +38,7 @@ export function CommandPalette() {
     }));
     return [
       { label: "Home", hint: "Top of the page", kind: "section", action: scrollTo("top") },
-      { label: "Story", hint: "Campus CEOs video · 12 min", kind: "section", action: scrollTo("story") },
+      { label: "Featured on Polaris", hint: "Campus CEOs · Episode 04 · ~12 min", kind: "section", action: scrollTo("story") },
       { label: "Work", hint: "Companies & exits", kind: "section", action: scrollTo("ventures") },
       { label: "Journey", hint: "Timeline 2021 → today", kind: "section", action: scrollTo("journey") },
       { label: "Rooms", hint: "YC · Perplexity · MIT · McKinsey", kind: "section", action: scrollTo("credentials") },
