@@ -13,6 +13,8 @@ const items = [
   "Bengaluru ↔ Bay Area",
 ];
 
+// Render two identical sets back-to-back, then animate translateX 0% → -50%.
+// Because the second set is identical to the first, the loop point is invisible.
 export function Marquee() {
   return (
     <section
@@ -20,16 +22,20 @@ export function Marquee() {
       className="relative w-full overflow-hidden border-y border-[var(--color-border)] py-6 sm:py-8 bg-[var(--color-bg-soft)]"
     >
       <motion.div
-        className="flex gap-12 whitespace-nowrap"
+        className="flex w-max gap-12 will-change-transform"
         animate={{ x: ["0%", "-50%"] }}
         transition={{
-          duration: 40,
+          duration: 18,
           repeat: Infinity,
           ease: "linear",
+          repeatType: "loop",
         }}
       >
-        {[...items, ...items, ...items].map((item, i) => (
-          <div key={i} className="flex items-center gap-12">
+        {[...items, ...items].map((item, i) => (
+          <div
+            key={i}
+            className="flex shrink-0 items-center gap-12 whitespace-nowrap"
+          >
             <span className="text-display text-[clamp(1.5rem,3vw,2.5rem)] text-[var(--color-fg)]">
               {item}
             </span>
