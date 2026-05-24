@@ -15,7 +15,7 @@ export function Now() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-x-10">
           <div className="md:col-span-5">
             <SectionHeader
-              number="06"
+              number="07"
               label="NOW"
               headline="What I'm working on this week."
             />

@@ -42,6 +42,7 @@ export function CommandPalette() {
       { label: "Work", hint: "Companies & exits", kind: "section", action: scrollTo("ventures") },
       { label: "Journey", hint: "Timeline 2021 → today", kind: "section", action: scrollTo("journey") },
       { label: "Rooms", hint: "YC · Perplexity · MIT · McKinsey", kind: "section", action: scrollTo("credentials") },
+      { label: "Photos", hint: "Out in the wild", kind: "section", action: scrollTo("gallery") },
       { label: "Now", hint: "What I'm building this week", kind: "section", action: scrollTo("now") },
       { label: "Contact", hint: "Email & socials", kind: "section", action: scrollTo("contact") },
       ...venturePages,

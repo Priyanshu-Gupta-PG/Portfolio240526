@@ -255,6 +255,112 @@ export const skills = {
   languages: ["Hindi · native", "English · professional", "Kannada · elementary"],
 };
 
+export type GalleryPhoto = {
+  id: string;
+  src: string;
+  alt: string;
+  caption: string;
+  event: string;
+  location?: string;
+  date: string;
+  tag: "fellowship" | "hackathon" | "speaking" | "organized" | "competed" | "field";
+  aspect: "portrait" | "landscape" | "square";
+};
+
+// Drop matching jpg/png/webp files into web/public/gallery/ — filenames
+// must match the `src` paths here. Until a file exists, cards fall back
+// to a styled typographic placeholder so the section ships intact.
+export const gallery: GalleryPhoto[] = [
+  {
+    id: "perplexity-bayarea",
+    src: "/gallery/perplexity-bayarea.jpg",
+    alt: "Workshop session at the Perplexity Business Fellowship.",
+    caption: "Workshop on enterprise GTM with the Perplexity cohort.",
+    event: "Perplexity Business Fellowship",
+    location: "San Francisco Bay Area",
+    date: "Nov 2024",
+    tag: "fellowship",
+    aspect: "landscape",
+  },
+  {
+    id: "yc-sus-india",
+    src: "/gallery/yc-sus-india.jpg",
+    alt: "Y Combinator Startup School India session.",
+    caption: "Inside YC's India cohort — credits, founders, hours of office hours.",
+    event: "Y Combinator · SUS India",
+    location: "India",
+    date: "Apr 2026",
+    tag: "fellowship",
+    aspect: "landscape",
+  },
+  {
+    id: "mit-launchx",
+    src: "/gallery/mit-launchx.jpg",
+    alt: "MIT LaunchX pitch session.",
+    caption: "Pitching out of MIT's high-school founder accelerator.",
+    event: "MIT LaunchX",
+    location: "Cambridge, MA",
+    date: "—",
+    tag: "fellowship",
+    aspect: "portrait",
+  },
+  {
+    id: "iit-bombay-eureka",
+    src: "/gallery/iit-bombay-eureka.jpg",
+    alt: "Eureka! Jr. competition at IIT Bombay.",
+    caption: "Competing at India's flagship student-founder bootcamp.",
+    event: "Eureka! Jr.",
+    location: "IIT Bombay",
+    date: "2023",
+    tag: "competed",
+    aspect: "square",
+  },
+  {
+    id: "mckinsey-forward",
+    src: "/gallery/mckinsey-forward.jpg",
+    alt: "McKinsey Forward 2025 session.",
+    caption: "Strategy & leadership module — McKinsey Forward cohort.",
+    event: "McKinsey Forward",
+    location: "Remote · India",
+    date: "2025",
+    tag: "fellowship",
+    aspect: "landscape",
+  },
+  {
+    id: "builderfellows-kickoff",
+    src: "/gallery/builderfellows-kickoff.jpg",
+    alt: "BuilderFellows cohort one kickoff.",
+    caption: "Day one of BuilderFellows — first cohort, first room.",
+    event: "BuilderFellows",
+    location: "Bengaluru",
+    date: "Aug 2025",
+    tag: "organized",
+    aspect: "landscape",
+  },
+  {
+    id: "polaris-ecell",
+    src: "/gallery/polaris-ecell.jpg",
+    alt: "Polaris E-Cell dealflow session.",
+    caption: "Pitch night — running dealflow for Polaris's E-Cell.",
+    event: "Polaris E-Cell",
+    location: "Bengaluru",
+    date: "2025",
+    tag: "organized",
+    aspect: "portrait",
+  },
+  {
+    id: "joper-team",
+    src: "/gallery/joper-team.jpg",
+    alt: "Joper team before the acquisition.",
+    caption: "The Joper team, weeks before the KiranaPro acquisition closed.",
+    event: "Joper",
+    location: "Bankura, WB",
+    date: "Jan 2025",
+    tag: "field",
+    aspect: "square",
+  },
+];
+
 export const nowList = [
   "Running dealflow for Polaris E-Cell — connecting student founders to VCs.",
   "Scaling BuilderFellows from cohort one to a programmatic residency.",

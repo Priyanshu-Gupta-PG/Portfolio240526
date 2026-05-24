@@ -77,6 +77,9 @@ export function Nav() {
           <a className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors" href="#credentials">
             Rooms
           </a>
+          <a className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors" href="#gallery">
+            Photos
+          </a>
           <a className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors" href="#now">
             Now
           </a>

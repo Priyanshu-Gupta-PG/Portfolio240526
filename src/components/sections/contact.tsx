@@ -19,7 +19,7 @@ export function Contact() {
     >
       <div className="mx-auto max-w-[1500px]">
         <div className="flex items-baseline gap-3">
-          <span className="text-mono-xs text-[var(--color-accent)]">07</span>
+          <span className="text-mono-xs text-[var(--color-accent)]">08</span>
           <span className="text-mono-xs text-[var(--color-fg-muted)]">CONTACT</span>
         </div>
 
