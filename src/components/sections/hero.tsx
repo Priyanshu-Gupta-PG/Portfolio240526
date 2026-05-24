@@ -42,12 +42,21 @@ export function Hero() {
           </span>
         </FadeIn>
 
+        {/* nameplate */}
+        <div className="-mt-2 sm:-mt-4">
+          <LineReveal delay={0.2}>
+            <p className="text-display-italic text-[clamp(2rem,4.4vw,3.75rem)] text-[var(--color-fg)] leading-[1.02]">
+              Priyanshu Gupta<span className="text-[var(--color-accent)]">.</span>
+            </p>
+          </LineReveal>
+        </div>
+
         {/* headline */}
         <h1 className="text-display text-[clamp(3.5rem,11vw,11.5rem)] text-[var(--color-fg)] max-w-[18ch]">
-          <LineReveal delay={0.25}>
+          <LineReveal delay={0.45}>
             <span>{profile.story.headline[0]}</span>
           </LineReveal>
-          <LineReveal delay={0.4}>
+          <LineReveal delay={0.6}>
             <span className="text-display-italic text-[var(--color-fg-muted)]">
               {profile.story.headline[1]}
             </span>
@@ -57,14 +66,14 @@ export function Hero() {
         {/* sub */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
           <div className="md:col-span-7 lg:col-span-6">
-            <LineReveal delay={0.7}>
+            <LineReveal delay={0.9}>
               <p className="text-display text-[clamp(1.5rem,3vw,2.25rem)] text-[var(--color-fg)] leading-[1.05]">
                 {profile.story.sub}
               </p>
             </LineReveal>
           </div>
           <div className="md:col-span-4 md:col-start-9 lg:col-span-3 lg:col-start-10 self-end">
-            <FadeIn delay={1.0}>
+            <FadeIn delay={1.15}>
               <p className="text-sm text-[var(--color-fg-muted)] leading-relaxed">
                 {profile.story.where}
               </p>
@@ -73,7 +82,7 @@ export function Hero() {
         </div>
 
         {/* footer strip */}
-        <FadeIn delay={1.2} className="mt-8 sm:mt-12">
+        <FadeIn delay={1.35} className="mt-8 sm:mt-12">
           <div className="hairline w-full" />
           <div className="mt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-6 text-mono-xs text-[var(--color-fg-muted)]">
