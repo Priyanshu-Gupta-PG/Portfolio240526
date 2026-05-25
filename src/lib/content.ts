@@ -272,6 +272,17 @@ export type GalleryPhoto = {
 // to a styled typographic placeholder so the section ships intact.
 export const gallery: GalleryPhoto[] = [
   {
+    id: "anakin-mini-hackathon",
+    src: "/gallery/anakin-mini-hackathon.jpg",
+    alt: "Selfie at Anakin.io's mini-hackathon — YC S21 builder session.",
+    caption: "Anakin.io's mini-hackathon — heads-down builder day with the YC S21 team.",
+    event: "Anakin.io · Mini-Hackathon",
+    location: "Bengaluru",
+    date: "May 2026",
+    tag: "hackathon",
+    aspect: "landscape",
+  },
+  {
     id: "agentathon-lyzr",
     src: "/gallery/agentathon-lyzr.jpg",
     alt: "Priyanshu Gupta accepting the third-place cheque at Agentathon by Lyzr.",
