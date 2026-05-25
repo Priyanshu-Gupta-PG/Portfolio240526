@@ -283,6 +283,17 @@ export const gallery: GalleryPhoto[] = [
     aspect: "landscape",
   },
   {
+    id: "gdg-blr-build-with-ai",
+    src: "/gallery/gdg-blr-build-with-ai.jpg",
+    alt: "GDG Bengaluru Build with AI cohort photo, Priyanshu hosted at Polaris.",
+    caption: "Hosted Build with AI for GDG Bengaluru — packed room at Polaris.",
+    event: "GDG Bengaluru · Build with AI",
+    location: "Polaris School of Technology, Bengaluru",
+    date: "Mar 2026",
+    tag: "organized",
+    aspect: "landscape",
+  },
+  {
     id: "perplexity-bayarea",
     src: "/gallery/perplexity-bayarea.jpg",
     alt: "Workshop session at the Perplexity Business Fellowship.",
