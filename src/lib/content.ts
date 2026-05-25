@@ -294,6 +294,17 @@ export const gallery: GalleryPhoto[] = [
     aspect: "landscape",
   },
   {
+    id: "openai-ai-engineers-day",
+    src: "/gallery/openai-ai-engineers-day.jpg",
+    alt: "Priyanshu with crew at OpenAI's AI Engineer's Day, hosted at Polaris.",
+    caption: "Crewing OpenAI's AI Engineer's Day — hosted at Polaris with Peak XV's Activate.",
+    event: "AI Engineer's Day · OpenAI",
+    location: "Polaris School of Technology, Bengaluru",
+    date: "2026",
+    tag: "organized",
+    aspect: "portrait",
+  },
+  {
     id: "perplexity-bayarea",
     src: "/gallery/perplexity-bayarea.jpg",
     alt: "Workshop session at the Perplexity Business Fellowship.",
