@@ -305,6 +305,17 @@ export const gallery: GalleryPhoto[] = [
     aspect: "portrait",
   },
   {
+    id: "linkedin-workshop-jayant",
+    src: "/gallery/linkedin-workshop-jayant.jpg",
+    alt: "LinkedIn growth workshop with Jayant Mundhra at the Polaris auditorium.",
+    caption: "Hosted Jayant Mundhra for a LinkedIn growth workshop — Polaris auditorium.",
+    event: "LinkedIn Workshop · Jayant Mundhra",
+    location: "Polaris School of Technology, Bengaluru",
+    date: "2026",
+    tag: "organized",
+    aspect: "landscape",
+  },
+  {
     id: "perplexity-bayarea",
     src: "/gallery/perplexity-bayarea.jpg",
     alt: "Workshop session at the Perplexity Business Fellowship.",
