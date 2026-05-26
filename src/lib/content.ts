@@ -10,7 +10,7 @@ export const profile = {
   phone: "+91 75260 45202",
   domain: "priyanshugupta.in",
   story: {
-    headline: ["Two acquisitions", "before college."],
+    headline: ["Two acquisitions", "before turning 18."],
     sub: "Built. Sold. Funded my own degree.",
     where: "Currently building BuilderFellows out of Bengaluru.",
   },

@@ -76,7 +76,7 @@ export default async function OG() {
               color: "#a6a09a",
             }}
           >
-            before college.
+            before turning 18.
           </div>
         </div>
 

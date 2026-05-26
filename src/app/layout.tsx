@@ -31,11 +31,11 @@ const SITE_URL = "https://priyanshugupta.in";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Priyanshu Gupta — Founder, Operator. Two acquisitions before college.",
+    default: "Priyanshu Gupta — Founder, Operator. Two acquisitions before 18.",
     template: "%s · Priyanshu Gupta",
   },
   description:
-    "Priyanshu Gupta — teenage serial founder from Bengaluru. Two acquisitions (Joper · ISP Association) before college. Founder of BuilderFellows. Y Combinator, Perplexity Business Fellow, MIT LaunchX, McKinsey Forward.",
+    "Priyanshu Gupta — teenage serial founder from Bengaluru. Two acquisitions (Joper · ISP Association) before turning 18. Founder of BuilderFellows. Y Combinator, Perplexity Business Fellow, MIT LaunchX, McKinsey Forward.",
   keywords: [
     "Priyanshu Gupta",
     "BuilderFellows",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: "Priyanshu Gupta — Founder, Operator",
     description:
-      "Two acquisitions before college. Founder of BuilderFellows. Building out of Bengaluru.",
+      "Two acquisitions before turning 18. Founder of BuilderFellows. Building out of Bengaluru.",
     siteName: "Priyanshu Gupta",
     locale: "en_IN",
     firstName: "Priyanshu",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Priyanshu Gupta — Founder, Operator",
     description:
-      "Two acquisitions before college. Founder of BuilderFellows. Building out of Bengaluru.",
+      "Two acquisitions before turning 18. Founder of BuilderFellows. Building out of Bengaluru.",
     creator: "@i_priyanshug",
     site: "@i_priyanshug",
   },

@@ -13,7 +13,7 @@ export function StructuredData() {
     image: `${SITE_URL}/opengraph-image`,
     jobTitle: "Founder, Operator",
     description:
-      "Serial founder. Two acquisitions before college. Founder of BuilderFellows. Y Combinator, Perplexity, MIT LaunchX, McKinsey Forward.",
+      "Serial founder. Two acquisitions before turning 18. Founder of BuilderFellows. Y Combinator, Perplexity, MIT LaunchX, McKinsey Forward.",
     address: {
       "@type": "PostalAddress",
       addressLocality: profile.city,
