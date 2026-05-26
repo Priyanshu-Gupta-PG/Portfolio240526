@@ -263,7 +263,7 @@ export type GalleryPhoto = {
   event: string;
   location?: string;
   date: string;
-  tag: "fellowship" | "hackathon" | "speaking" | "organized" | "competed" | "field";
+  tag: "fellowship" | "hackathon" | "speaking" | "organized" | "competed" | "field" | "yc";
   aspect: "portrait" | "landscape" | "square";
 };
 
@@ -301,7 +301,7 @@ export const gallery: GalleryPhoto[] = [
     event: "Jared Friedman · YC",
     location: "Bengaluru",
     date: "Apr 2026",
-    tag: "fellowship",
+    tag: "yc",
     aspect: "landscape",
   },
   {
@@ -367,7 +367,7 @@ export const gallery: GalleryPhoto[] = [
     event: "YC · Startup School India",
     location: "India",
     date: "Apr 2026",
-    tag: "fellowship",
+    tag: "yc",
     aspect: "landscape",
   },
   {

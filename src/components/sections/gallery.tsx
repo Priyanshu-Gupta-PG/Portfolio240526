@@ -15,6 +15,7 @@ const tagLabel: Record<GalleryPhoto["tag"], string> = {
   organized: "ORGANIZED",
   competed: "COMPETED",
   field: "FIELD",
+  yc: "Y COMBINATOR",
 };
 
 const aspectClass: Record<GalleryPhoto["aspect"], string> = {
