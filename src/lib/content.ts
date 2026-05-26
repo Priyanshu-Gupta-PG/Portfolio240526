@@ -267,9 +267,9 @@ export type GalleryPhoto = {
   aspect: "portrait" | "landscape" | "square";
 };
 
-// Drop matching jpg/png/webp files into web/public/gallery/ — filenames
-// must match the `src` paths here. Until a file exists, cards fall back
-// to a styled typographic placeholder so the section ships intact.
+// Each entry references a file in web/public/gallery/ — keep filenames
+// in sync with `src` paths below. The cards still gracefully fall back
+// to a styled placeholder if a referenced file is missing.
 export const gallery: GalleryPhoto[] = [
   {
     id: "anakin-hack-room",
@@ -393,17 +393,6 @@ export const gallery: GalleryPhoto[] = [
     aspect: "landscape",
   },
   {
-    id: "perplexity-bayarea",
-    src: "/gallery/perplexity-bayarea.jpg",
-    alt: "Workshop session at the Perplexity Business Fellowship.",
-    caption: "Workshop on enterprise GTM with the Perplexity cohort.",
-    event: "Perplexity Business Fellowship",
-    location: "San Francisco Bay Area",
-    date: "Nov 2024",
-    tag: "fellowship",
-    aspect: "landscape",
-  },
-  {
     id: "yc-sus-india",
     src: "/gallery/yc-sus-india.jpg",
     alt: "Priyanshu Gupta at the Y Combinator Startup School India 2026 backdrop.",
@@ -412,50 +401,6 @@ export const gallery: GalleryPhoto[] = [
     location: "India",
     date: "Apr 2026",
     tag: "yc",
-    aspect: "landscape",
-  },
-  {
-    id: "mit-launchx",
-    src: "/gallery/mit-launchx.jpg",
-    alt: "MIT LaunchX pitch session.",
-    caption: "Pitching out of MIT's high-school founder accelerator.",
-    event: "MIT LaunchX",
-    location: "Cambridge, MA",
-    date: "—",
-    tag: "fellowship",
-    aspect: "portrait",
-  },
-  {
-    id: "iit-bombay-eureka",
-    src: "/gallery/iit-bombay-eureka.jpg",
-    alt: "Eureka! Jr. competition at IIT Bombay.",
-    caption: "Competing at India's flagship student-founder bootcamp.",
-    event: "Eureka! Jr.",
-    location: "IIT Bombay",
-    date: "2023",
-    tag: "competed",
-    aspect: "square",
-  },
-  {
-    id: "mckinsey-forward",
-    src: "/gallery/mckinsey-forward.jpg",
-    alt: "McKinsey Forward 2025 session.",
-    caption: "Strategy & leadership module — McKinsey Forward cohort.",
-    event: "McKinsey Forward",
-    location: "Remote · India",
-    date: "2025",
-    tag: "fellowship",
-    aspect: "landscape",
-  },
-  {
-    id: "builderfellows-kickoff",
-    src: "/gallery/builderfellows-kickoff.jpg",
-    alt: "BuilderFellows cohort one kickoff.",
-    caption: "Day one of BuilderFellows — first cohort, first room.",
-    event: "BuilderFellows",
-    location: "Bengaluru",
-    date: "Aug 2025",
-    tag: "organized",
     aspect: "landscape",
   },
   {
@@ -479,17 +424,6 @@ export const gallery: GalleryPhoto[] = [
     date: "2025",
     tag: "organized",
     aspect: "landscape",
-  },
-  {
-    id: "joper-team",
-    src: "/gallery/joper-team.jpg",
-    alt: "Joper team before the acquisition.",
-    caption: "The Joper team, weeks before the KiranaPro acquisition closed.",
-    event: "Joper",
-    location: "Bankura, WB",
-    date: "Jan 2025",
-    tag: "field",
-    aspect: "square",
   },
 ];
 
