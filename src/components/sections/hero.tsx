@@ -18,7 +18,7 @@ export function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative min-h-[100svh] w-full flex flex-col justify-end pb-16 sm:pb-32 px-4 sm:px-10 overflow-hidden"
+      className="relative sm:min-h-[100svh] w-full flex flex-col sm:justify-end pt-28 pb-14 sm:pt-0 sm:pb-32 px-4 sm:px-10 overflow-hidden"
     >
       {/* ambient gradient */}
       <div
