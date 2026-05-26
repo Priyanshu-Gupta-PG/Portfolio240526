@@ -20,13 +20,22 @@ export function Hero() {
       ref={ref}
       className="relative sm:min-h-[100svh] w-full flex flex-col sm:justify-end pt-28 pb-14 sm:pt-0 sm:pb-32 px-4 sm:px-10 overflow-hidden"
     >
-      {/* ambient gradient */}
+      {/* ambient gradient — amber core fading into orange edges */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-1/2 left-1/2 -translate-x-1/2 w-[1400px] h-[1400px] rounded-full opacity-[0.08]"
+        className="pointer-events-none absolute -top-1/2 left-1/2 -translate-x-1/2 w-[1400px] h-[1400px] rounded-full opacity-[0.10]"
         style={{
           background:
-            "radial-gradient(circle, var(--color-accent) 0%, transparent 60%)",
+            "radial-gradient(circle, var(--color-accent) 0%, var(--color-accent-warm) 35%, transparent 65%)",
+        }}
+      />
+      {/* secondary orange ember — bottom-left, low and warm */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-1/3 -left-1/4 w-[800px] h-[800px] rounded-full opacity-[0.06]"
+        style={{
+          background:
+            "radial-gradient(circle, var(--color-accent-deep) 0%, transparent 70%)",
         }}
       />
 

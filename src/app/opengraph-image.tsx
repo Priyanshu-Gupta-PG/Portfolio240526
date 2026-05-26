@@ -28,7 +28,19 @@ export default async function OG() {
             width: 1000,
             height: 1000,
             borderRadius: "100%",
-            background: "radial-gradient(circle, #f5a62333 0%, transparent 70%)",
+            background:
+              "radial-gradient(circle, #f5a62333 0%, #fb923c22 35%, transparent 70%)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: -200,
+            left: -200,
+            width: 600,
+            height: 600,
+            borderRadius: "100%",
+            background: "radial-gradient(circle, #ea580c1a 0%, transparent 70%)",
           }}
         />
         <div

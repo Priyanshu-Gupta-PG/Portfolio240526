@@ -11,6 +11,10 @@
   --color-border-strong: #2a2724;
   --color-accent: #f5a623;
   --color-accent-soft: #d68910;
+  /* sunset orange — used in ambient gradients, glows, and atmospheric
+     accents alongside (not instead of) the amber primary. */
+  --color-accent-warm: #fb923c;
+  --color-accent-deep: #ea580c;
 
   /* fonts (variables come from next/font in layout.tsx) */
   --font-serif: var(--font-instrument-serif);
