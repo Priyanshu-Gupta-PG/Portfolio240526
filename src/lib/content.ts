@@ -338,6 +338,17 @@ export const gallery: GalleryPhoto[] = [
     aspect: "landscape",
   },
   {
+    id: "agentathon-lyzr-pitching",
+    src: "/gallery/agentathon-lyzr-pitching.jpg",
+    alt: "Priyanshu pitching at Lyzr's Agentathon — Polaris podium.",
+    caption: "Pitched at Lyzr's Agentathon — Polaris podium, AI-agent hackathon finals.",
+    event: "Agentathon · Pitched",
+    location: "Polaris School of Technology, Bengaluru",
+    date: "Apr 2026",
+    tag: "speaking",
+    aspect: "landscape",
+  },
+  {
     id: "agentathon-lyzr",
     src: "/gallery/agentathon-lyzr.jpg",
     alt: "Priyanshu Gupta accepting the third-place cheque at Agentathon by Lyzr.",
