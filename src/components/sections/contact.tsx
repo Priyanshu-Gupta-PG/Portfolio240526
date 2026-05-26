@@ -39,18 +39,18 @@ export function Contact() {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
           className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-12 gap-10"
         >
-          <div className="md:col-span-6 lg:col-span-5">
+          <div className="md:col-span-6 lg:col-span-5 min-w-0">
             <p className="text-mono-xs text-[var(--color-fg-muted)] mb-3">EMAIL</p>
-            <Magnetic>
+            <Magnetic className="block max-w-full">
               <a
                 href={`mailto:${profile.email}`}
-                className="group inline-flex items-baseline gap-3 text-[clamp(1.25rem,2.4vw,2rem)] text-[var(--color-fg)] hover:text-[var(--color-accent)] transition-colors"
+                className="group inline-flex items-baseline gap-2 sm:gap-3 text-[clamp(0.95rem,2.4vw,2rem)] text-[var(--color-fg)] hover:text-[var(--color-accent)] transition-colors break-all"
               >
                 <span className="border-b border-[var(--color-border-strong)] group-hover:border-[var(--color-accent)] transition-colors pb-1">
                   {profile.email}
                 </span>
                 <ArrowUpRight
-                  className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                  className="shrink-0 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
                   strokeWidth={1.5}
                 />
               </a>
@@ -61,7 +61,7 @@ export function Contact() {
             </p>
           </div>
 
-          <div className="md:col-span-6 lg:col-span-5 lg:col-start-8 grid grid-cols-2 gap-x-6 gap-y-8 self-start">
+          <div className="md:col-span-6 lg:col-span-5 lg:col-start-8 grid grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-6 sm:gap-y-8 self-start min-w-0">
             <ContactLink label="LINKEDIN" handle="priyanshu--gupta" href={links.linkedin} />
             <ContactLink label="X / TWITTER" handle="@i_priyanshug" href={links.x} />
             <ContactLink label="INSTAGRAM" handle="priyanshuvkgupta" href={links.instagram} />
@@ -110,13 +110,13 @@ function ContactLink({
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-      className="group flex flex-col items-start gap-1.5"
+      className="group flex flex-col items-start gap-1.5 min-w-0"
     >
       <span className="text-mono-xs text-[var(--color-fg-muted)]">{label}</span>
-      <span className="inline-flex items-center gap-1.5 text-[var(--color-fg)] group-hover:text-[var(--color-accent)] transition-colors">
+      <span className="inline-flex items-center gap-1.5 text-sm sm:text-base text-[var(--color-fg)] group-hover:text-[var(--color-accent)] transition-colors break-all">
         {handle}
         <ArrowUpRight
-          className="h-3.5 w-3.5 opacity-0 group-hover:opacity-100 transition-opacity"
+          className="shrink-0 h-3.5 w-3.5 opacity-0 group-hover:opacity-100 transition-opacity"
           strokeWidth={1.5}
         />
       </span>
