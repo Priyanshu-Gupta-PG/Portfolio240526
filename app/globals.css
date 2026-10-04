@@ -1,0 +1,163 @@
+:root {
+  --bg: #fbfbfa;
+  --fg: #111110;
+  --muted: #6f6e69;
+  --line: #e6e5e1;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111110;
+    --fg: #ededec;
+    --muted: #8f8e89;
+    --line: #2a2a28;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #111110;
+  --fg: #ededec;
+  --muted: #8f8e89;
+  --line: #2a2a28;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 8rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+h1 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+section + section {
+  margin-top: 3.5rem;
+}
+
+.intro p + p {
+  margin-top: 1rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s;
+}
+
+a:hover {
+  text-decoration-color: var(--fg);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.list.tight {
+  gap: 0.5rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.date {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+  padding-top: 0.15rem;
+}
+
+.note {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.links {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--fg);
+}
+
+/* Toggle label shows the theme you'd switch to. */
+.theme-toggle .sun {
+  display: none;
+}
+:root[data-theme="dark"] .theme-toggle .sun {
+  display: inline;
+}
+:root[data-theme="dark"] .theme-toggle .moon {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-toggle .sun {
+    display: inline;
+  }
+  :root:not([data-theme]) .theme-toggle .moon {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 3.5rem;
+  }
+}
