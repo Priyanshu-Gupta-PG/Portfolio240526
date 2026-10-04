@@ -1,4 +1,4 @@
-import { profile, work, programs, featured, events } from "@/content";
+import { profile, work, earlier, programs, featured, events } from "@/content";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Home() {
@@ -34,6 +34,17 @@ export default function Home() {
               </div>
               <p className="muted">{w.description}</p>
               {w.note && <p className="note">↳ {w.note}</p>}
+            </li>
+          ))}
+        </ul>
+        <ul className="list tight" style={{ marginTop: "1.75rem" }}>
+          {earlier.map((e) => (
+            <li key={e.name} className="row">
+              <span>
+                {e.name}
+                <span className="muted"> — {e.role}</span>
+              </span>
+              <span className="date">{e.period}</span>
             </li>
           ))}
         </ul>

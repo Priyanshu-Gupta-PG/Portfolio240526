@@ -5,8 +5,9 @@ export const profile = {
   role: "Founder · Operator",
   location: "Bengaluru, India",
   intro: [
-    "I started my first company at fourteen and sold two before turning 18. Built, sold, and funded my own degree.",
-    "Today I'm building BuilderFellows, a residency for student founders, and running dealflow for the Polaris E-Cell. I dropped Penn State after a month to study CS/AI in Bengaluru, because that's where the building is happening.",
+    "I chat with founders for a living. I'm a third-time founder; my first two companies were acquired before I turned 18.",
+    "Today I'm building BuilderFellows, a residency for student founders, and running startup relations and dealflow at the Polaris E-Cell. Most recently I did content and strategy at LaunchX.",
+    "I'm a sophomore studying CS (AI/ML) at Polaris School of Technology, after dropping out of Penn State a month in. I like working where tech meets content.",
   ],
   email: "priyanshuguptaunique@gmail.com",
   links: [
@@ -34,11 +35,25 @@ export const work: Work[] = [
       "A residency for the next wave of student founders. Mentorship, team-building, and funding access for builders who refuse to wait until graduation.",
   },
   {
+    name: "Polaris E-Cell",
+    role: "Startup Relations & Dealflow",
+    period: "2025 —",
+    description:
+      "Helping student founders who want to build and raise. Connecting them with E-Cell resources, VCs, and operators, and keeping deals moving.",
+  },
+  {
+    name: "LaunchX",
+    role: "Content & Strategy",
+    period: "2026",
+    description:
+      "Interviewed Launchies, alumni, mentors, and speakers, and turned their stories into profiles, essays, and social copy. Built the story pipeline for web, email, and fundraising.",
+  },
+  {
     name: "Band9Prep",
     role: "Co-founder",
-    period: "2026 —",
+    period: "2026",
     description:
-      "IELTS prep for students aiming for a 9. Driving product and GTM. Pre-launch.",
+      "IELTS prep for students aiming for a 9. Drove product and GTM.",
   },
   {
     name: "Joper",
@@ -58,18 +73,27 @@ export const work: Work[] = [
   },
   {
     name: "Cross The Skylimits",
-    role: "Core Operations",
+    role: "Operations",
     period: "2022 — 25",
     description:
-      "Joined as a management intern, promoted twice: Growth Manager, then Core Operations.",
+      "Joined as a management intern, then Growth Manager, then the core operations team, over 3.5 years.",
   },
+];
+
+// Smaller or shorter roles, shown as a compact list under Work.
+export const earlier = [
+  { name: "BoostEd Asia", role: "Head of Outreach & Collaborations", period: "2024 — 25" },
+  { name: "Memocon", role: "Co-founder", period: "2024" },
+  { name: "Raintech Software", role: "Sales Associate", period: "2024" },
+  { name: "Knowledge Catalyst", role: "Founder", period: "2021 — 23" },
+  { name: "Project Sarama", role: "CTO, earlier volunteer lead", period: "2021 — 23" },
 ];
 
 export const programs = [
   { name: "Y Combinator", detail: "Startup School India", year: "2026" },
   { name: "Perplexity", detail: "Business Fellow", year: "2024 — 25" },
   { name: "McKinsey", detail: "Forward", year: "2025" },
-  { name: "Polaris E-Cell", detail: "Startup Relations & Dealflow", year: "2025 —" },
+  { name: "AWS", detail: "$10K credits, twice", year: "" },
   { name: "IIT Bombay", detail: "Eureka! Jr.", year: "2023" },
   { name: "MIT LaunchX", detail: "Alumnus", year: "" },
 ];
